@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             int j = 0;
             Line line = new Line("label" + i, i++%2 == 0);
             while (j < duration) {
-                line.add(j++, Math.random()*1000);
+                line.add(++j, Math.random()*1000);
             }
             lines.add(line);
         }

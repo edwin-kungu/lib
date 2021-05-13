@@ -493,12 +493,13 @@ public class GraphView extends View {
         // and a vertical line from the bottom of the triangle to the bottom x axis;
         final float x = x(touchedVal.x);
 
-        for (Best b : bests) {
-            this.cPaint.setColor(b.line.color);
-            c.drawCircle(x, y(b.my), strokeWidth*.87f, this.cPaint);
-        }
         //The vertical indicator will start from the point
         c.drawLine(x, 0, x, tRectF.bottom, mXLine);
+
+        for (Best b : bests) {
+            this.cPaint.setColor(b.line.color);
+            c.drawCircle(x, y(b.my), strokeWidth*2.2f, this.cPaint);
+        }
 
         //include shadow renderer but we'll draw a plain rect
         s.drawRoundRectWithShadow(c, rect, radius, elevation);
